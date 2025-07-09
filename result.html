@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Results - Voting System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>📊 Live Results</h2>
+  <canvas id="resultChart" width="400" height="200"></canvas>
+
+  <script>
+    const ctx = document.getElementById('resultChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Candidate A', 'Candidate B', 'Candidate C'],
+        datasets: [{
+          label: 'Total Votes',
+          data: [10, 5, 8],  // Dummy values; will come from backend later
+          backgroundColor: ['#ff6384', '#36a2eb', '#4caf50']
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            stepSize: 1
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
